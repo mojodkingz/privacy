@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>นโยบายความเป็นส่วนตัว — MOJO Network Assistant</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 32px 20px 80px; max-width: 720px;
+    font-family: -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif;
+    line-height: 1.75; color: #1a1a1a; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #16181c; }
+    hr { border-color: #333; }
+    .box { background: #1f2228; border-color: #333; }
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { font-size: 1.15rem; margin-top: 36px; }
+  .sub { opacity: .65; font-size: .9rem; margin-top: 0; }
+  .box { background: #f4f6f8; border: 1px solid #e2e6ea; border-radius: 10px; padding: 16px 20px; }
+  hr { border: 0; border-top: 1px solid #e2e6ea; margin: 48px 0; }
+  code { font-size: .9em; }
+</style>
+</head>
+<body>
+
+<h1>นโยบายความเป็นส่วนตัว</h1>
+<p class="sub">MOJO Network Assistant &middot; ปรับปรุงล่าสุด 29 กรกฎาคม 2569</p>
+
+<div class="box">
+  <strong>สรุปสั้นที่สุด:</strong> แอปนี้ <strong>ไม่เก็บ ไม่ส่ง และไม่แชร์ข้อมูลส่วนบุคคลของผู้ใช้</strong>
+  ไม่มีบัญชีผู้ใช้ ไม่มีระบบเก็บสถิติการใช้งาน ไม่มีโฆษณา และไม่มีเครื่องมือติดตามใด ๆ
+</div>
+
+<h2>ข้อมูลที่แอปประมวลผล</h2>
+<p>
+  ผลการสแกนทั้งหมด (IP, ชื่อเครื่อง, พอร์ตที่เปิด, รายชื่อ Wi-Fi รอบข้าง)
+  ถูกเก็บไว้ในหน่วยความจำของเครื่องเท่านั้น และหายไปเมื่อปิดแอป
+</p>
+<p>
+  แอปไม่เขียนข้อมูลเหล่านี้ลงไฟล์ ยกเว้นกรณีเดียวคือผู้ใช้กดปุ่ม &ldquo;แชร์ผลสแกน&rdquo; เอง
+  ซึ่งจะสร้างไฟล์ CSV ชั่วคราวไว้ในพื้นที่แคชของแอปเพื่อส่งต่อให้แอปที่ผู้ใช้เลือก
+</p>
+
+<h2>เรื่องสิทธิ์ตำแหน่ง</h2>
+<p>
+  แอปขอสิทธิ์ตำแหน่ง (<code>ACCESS_FINE_LOCATION</code> / <code>ACCESS_COARSE_LOCATION</code>)
+  เพราะระบบปฏิบัติการ Android กำหนดให้แอปต้องมีสิทธิ์นี้ก่อน
+  จึงจะอ่านชื่อเครือข่าย Wi-Fi (SSID) และสแกนหาเครือข่ายรอบข้างได้
+</p>
+<p>
+  <strong>แอปไม่ได้เรียกอ่านพิกัด GPS ใด ๆ ทั้งสิ้น</strong>
+  ไม่เก็บ ไม่บันทึก และไม่ส่งตำแหน่งของผู้ใช้ออกนอกเครื่อง
+</p>
+
+<h2>การเชื่อมต่อออกภายนอก</h2>
+<p>
+  แอปติดต่อออกอินเทอร์เน็ตเพียงกรณีเดียว คือเมื่อผู้ใช้เปิดแท็บ &ldquo;พอร์ต&rdquo;
+  แอปจะขอ IP สาธารณะของผู้ใช้จากบริการตรวจ IP สาธารณะ
+  (<code>api.ipify.org</code>, <code>checkip.amazonaws.com</code> หรือ <code>icanhazip.com</code>)
+  ซึ่งเป็นข้อมูลที่จำเป็นต่อการทดสอบ port forwarding
+  คำขอนี้ไม่มีข้อมูลระบุตัวตนใด ๆ แนบไปด้วย
+</p>
+<p>
+  การเชื่อมต่ออื่นทั้งหมดของแอปเป็นการต่อภายในเครือข่ายของผู้ใช้เอง
+  หรือไปยังปลายทางที่ผู้ใช้พิมพ์ระบุเอง
+</p>
+
+<h2>การใช้งานอย่างเหมาะสม</h2>
+<p>
+  เครื่องมือสแกนเครือข่ายและตรวจพอร์ตในแอปนี้มีไว้ใช้กับเครือข่ายที่ผู้ใช้เป็นเจ้าของ
+  หรือได้รับอนุญาตให้ตรวจสอบเท่านั้น การนำไปสแกนเครือข่ายหรือเครื่องของผู้อื่นโดยไม่ได้รับอนุญาต
+  อาจผิดกฎหมาย และอยู่นอกเหนือความรับผิดชอบของผู้พัฒนา
+</p>
+
+<h2>เด็กและเยาวชน</h2>
+<p>
+  แอปนี้เป็นเครื่องมือสำหรับผู้ดูแลเครือข่าย ไม่ได้ออกแบบมาเพื่อเด็ก
+  และไม่มีการเก็บข้อมูลจากผู้ใช้ทุกช่วงอายุ
+</p>
+
+<h2>การเปลี่ยนแปลงนโยบายนี้</h2>
+<p>หากมีการเปลี่ยนแปลงในอนาคต จะแก้ไขที่หน้านี้พร้อมระบุวันที่ปรับปรุงใหม่</p>
+
+<h2>ติดต่อ</h2>
+<p>
+  <strong>mojokingz.dev@gmail.com</strong><br>
+  Mojokingz Studio &middot; ประเทศไทย
+</p>
+
+<hr>
+
+<h1>Privacy Policy</h1>
+<p class="sub">MOJO Network Assistant &middot; Last updated 29 July 2026</p>
+
+<div class="box">
+  <strong>In short:</strong> This app <strong>does not collect, transmit, or share any personal data</strong>.
+  No accounts, no analytics, no advertising, and no tracking of any kind.
+</div>
+
+<h2>What the app processes</h2>
+<p>
+  All scan results (IP addresses, host names, open ports, nearby Wi-Fi networks) are kept
+  in device memory only and are discarded when the app closes.
+</p>
+<p>
+  The app never writes this data to a file, with one exception: when you tap
+  &ldquo;Share scan results&rdquo; yourself, a temporary CSV file is created in the app's
+  cache directory so it can be handed to the app you choose.
+</p>
+
+<h2>Location permission</h2>
+<p>
+  The app requests location permission (<code>ACCESS_FINE_LOCATION</code> /
+  <code>ACCESS_COARSE_LOCATION</code>) because Android requires it before an app can read
+  Wi-Fi network names (SSIDs) or scan for nearby networks.
+</p>
+<p>
+  <strong>The app never reads GPS coordinates.</strong> Your location is not collected,
+  stored, or transmitted anywhere.
+</p>
+
+<h2>Outbound connections</h2>
+<p>
+  The app makes exactly one outbound internet request: when you open the &ldquo;Ports&rdquo; tab,
+  it asks a public IP lookup service (<code>api.ipify.org</code>, <code>checkip.amazonaws.com</code>,
+  or <code>icanhazip.com</code>) for your public IP, which is required to test port forwarding.
+  No identifying information is attached to that request.
+</p>
+<p>
+  All other connections are to your own local network, or to a destination you typed in yourself.
+</p>
+
+<h2>Acceptable use</h2>
+<p>
+  The network scanning and port checking tools in this app are intended for networks you own
+  or are authorised to test. Scanning networks or devices without permission may be illegal
+  and is outside the developer's responsibility.
+</p>
+
+<h2>Children</h2>
+<p>
+  This app is a network administration tool and is not directed at children.
+  No data is collected from users of any age.
+</p>
+
+<h2>Changes to this policy</h2>
+<p>Any future changes will be published on this page with an updated date.</p>
+
+<h2>Contact</h2>
+<p>
+  <strong>mojokingz.dev@gmail.com</strong><br>
+  Mojokingz Studio &middot; Thailand
+</p>
+
+</body>
+</html>
