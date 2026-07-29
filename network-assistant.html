@@ -11,17 +11,24 @@
     font-family: -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif;
     line-height: 1.75; color: #1a1a1a; background: #fff;
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e8e8e8; background: #16181c; }
-    hr { border-color: #333; }
-    .box { background: #1f2228; border-color: #333; }
-  }
   h1 { font-size: 1.6rem; margin-bottom: 4px; }
   h2 { font-size: 1.15rem; margin-top: 36px; }
   .sub { opacity: .65; font-size: .9rem; margin-top: 0; }
   .box { background: #f4f6f8; border: 1px solid #e2e6ea; border-radius: 10px; padding: 16px 20px; }
   hr { border: 0; border-top: 1px solid #e2e6ea; margin: 48px 0; }
   code { font-size: .9em; }
+
+  /*
+   * บล็อกโหมดมืดต้องอยู่ "ท้ายสุด" ของ stylesheet เสมอ
+   * เพราะ .box ในนี้กับ .box ด้านบนมี specificity เท่ากัน (0,1,0)
+   * กฎที่อยู่ทีหลังจึงชนะ — เคยวางไว้ด้านบนแล้วกล่องสรุปกลายเป็น
+   * พื้นสว่างตัวหนังสือสว่างจนอ่านไม่ออกในโหมดมืด
+   */
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #16181c; }
+    hr { border-color: #333; }
+    .box { background: #1f2228; border-color: #3a3f47; color: #e8e8e8; }
+  }
 </style>
 </head>
 <body>
