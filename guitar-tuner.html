@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>นโยบายความเป็นส่วนตัว — MOJO Guitar Tuner</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 32px 20px 80px; max-width: 720px;
+    font-family: -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif;
+    line-height: 1.75; color: #1a1a1a; background: #fff;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { font-size: 1.15rem; margin-top: 36px; }
+  .sub { opacity: .65; font-size: .9rem; margin-top: 0; }
+  .box { background: #f4f6f8; border: 1px solid #e2e6ea; border-radius: 10px; padding: 16px 20px; }
+  .mic { background: #eef4ff; border: 1px solid #cfe0ff; border-radius: 10px; padding: 16px 20px; }
+  hr { border: 0; border-top: 1px solid #e2e6ea; margin: 48px 0; }
+  code { font-size: .9em; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+
+  /*
+   * บล็อกโหมดมืดต้องอยู่ "ท้ายสุด" ของ stylesheet เสมอ
+   * เพราะ .box / .mic ในนี้กับที่ประกาศด้านบนมี specificity เท่ากัน (0,1,0)
+   * กฎที่อยู่ทีหลังจึงชนะ — เคยวางไว้ด้านบนแล้วกล่องสรุปกลายเป็น
+   * พื้นสว่างตัวหนังสือสว่างจนอ่านไม่ออกในโหมดมืด
+   */
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #16181c; }
+    hr { border-color: #333; }
+    .box { background: #1f2228; border-color: #3a3f47; color: #e8e8e8; }
+    .mic { background: #1b2333; border-color: #2f4468; color: #e8e8e8; }
+  }
+</style>
+</head>
+<body>
+
+<h1>นโยบายความเป็นส่วนตัว</h1>
+<p class="sub">MOJO Guitar Tuner &middot; ปรับปรุงล่าสุด 31 กรกฎาคม 2569</p>
+
+<div class="box">
+  <strong>สรุปสั้นที่สุด:</strong> แอปนี้ <strong>ไม่เก็บ ไม่ส่ง และไม่แชร์ข้อมูลใด ๆ ของผู้ใช้</strong>
+  ไม่มีบัญชีผู้ใช้ ไม่ต่ออินเทอร์เน็ต ไม่มีโฆษณา ไม่มีการซื้อในแอป
+  และไม่มีเครื่องมือเก็บสถิติหรือติดตามพฤติกรรมใด ๆ ทั้งสิ้น
+</div>
+
+<h2>ไมโครโฟน — สิทธิ์เดียวที่แอปขอ</h2>
+
+<div class="mic">
+  <strong>แอปขอสิทธิ์ไมโครโฟนเพื่อ "ฟังระดับเสียง" ของเครื่องดนตรีเท่านั้น</strong>
+  เพื่อบอกว่าสายที่คุณดีดอยู่ตอนนี้เสียงสูงไปหรือต่ำไปกี่เซ็นต์
+</div>
+
+<p>สิ่งที่เกิดขึ้นจริงกับเสียงที่ไมค์รับเข้ามา:</p>
+<ul>
+  <li>เสียงถูกคำนวณหาความถี่ <strong>ในหน่วยความจำของเครื่องคุณ</strong> แล้วทิ้งทันที</li>
+  <li><strong>ไม่มีการบันทึกเป็นไฟล์</strong> ไม่ว่าจะชั่วคราวหรือถาวร</li>
+  <li><strong>ไม่มีการส่งออกจากเครื่อง</strong> — แอปไม่มีความสามารถต่ออินเทอร์เน็ตเลย</li>
+  <li><strong>ไม่มีการรู้จำเสียงพูด</strong> แอปสนใจแค่ความถี่ ไม่ได้สนใจว่าเป็นเสียงอะไร</li>
+  <li>ไมค์ <strong>ทำงานเฉพาะตอนที่คุณเปิดหน้าจูนเนอร์อยู่</strong> ออกจากหน้านั้นเมื่อไหร่ ไมค์ปิดทันที</li>
+</ul>
+
+<p>
+  ถ้าคุณไม่อนุญาตให้ใช้ไมโครโฟน <strong>ก็ยังใช้แอปได้ตามปกติ</strong>
+  เพียงแต่จะใช้ได้เฉพาะส่วนคลังคอร์ด ซึ่งไม่ต้องใช้ไมค์เลย
+  คุณถอนสิทธิ์คืนได้ทุกเมื่อที่ ตั้งค่าของเครื่อง &rsaquo; แอป &rsaquo; MOJO Guitar Tuner &rsaquo; สิทธิ์
+</p>
+
+<h2>ข้อมูลที่แอปบันทึกลงเครื่อง</h2>
+<p>
+  แอปบันทึกเฉพาะ <strong>การตั้งค่าของคุณเอง</strong> ได้แก่
+  ภาษา ธีมสว่าง/มืด ความถี่อ้างอิง A4 การเปิด-ปิดการสั่น โหมดถนัดซ้าย รูปแบบชื่อโน้ต
+  และรายการคอร์ดที่คุณกดบันทึกเป็นรายการโปรด
+</p>
+<p>
+  ข้อมูลทั้งหมดนี้เก็บอยู่ใน <strong>หน่วยความจำภายในเครื่องของคุณเท่านั้น</strong>
+  ไม่เคยถูกส่งออกไปที่ไหน และจะถูกลบทิ้งทันทีเมื่อคุณถอนการติดตั้งแอป
+</p>
+
+<h2>การเชื่อมต่ออินเทอร์เน็ต</h2>
+<p>
+  <strong>แอปไม่เชื่อมต่ออินเทอร์เน็ตเลย</strong>
+  ทั้งจูนเนอร์และคลังคอร์ดทั้ง 1,380 คอร์ดทำงานแบบออฟไลน์เต็มรูปแบบ
+  ข้อมูลคอร์ดทั้งหมดฝังมากับตัวแอปตั้งแต่ตอนติดตั้ง
+</p>
+
+<h2>สิทธิ์ที่แอปขอ</h2>
+<p>
+  แอปขอสิทธิ์เดียวคือ <strong>ไมโครโฟน</strong> (<code>RECORD_AUDIO</code>) ตามที่อธิบายไว้ด้านบน<br>
+  ไม่ขอตำแหน่ง ไม่ขอกล้อง ไม่ขอรายชื่อผู้ติดต่อ ไม่ขอพื้นที่จัดเก็บ ไม่ขอสิทธิ์เข้าอินเทอร์เน็ต
+</p>
+
+<h2>บริการของบุคคลที่สาม</h2>
+<p>
+  <strong>แอปไม่ได้ใช้บริการของบุคคลที่สามใด ๆ</strong>
+  ไม่มีเครื่องมือเก็บสถิติ ไม่มีระบบรายงานข้อผิดพลาด ไม่มีเครือข่ายโฆษณา
+</p>
+
+<h2>เด็กและเยาวชน</h2>
+<p>
+  แอปนี้ไม่ได้ออกแบบมาเพื่อเด็กโดยเฉพาะ แต่เนื่องจากไม่มีการเก็บข้อมูลใด ๆ
+  จึงไม่มีการเก็บข้อมูลจากผู้ใช้ทุกช่วงอายุรวมถึงเด็กอายุต่ำกว่า 13 ปี
+</p>
+
+<h2>การเปลี่ยนแปลงนโยบายนี้</h2>
+<p>
+  หากมีการเปลี่ยนแปลงในอนาคต จะแก้ไขที่หน้านี้พร้อมระบุวันที่ปรับปรุงใหม่
+</p>
+
+<h2>ติดต่อ</h2>
+<p>
+  หากมีคำถามเกี่ยวกับนโยบายนี้ ติดต่อได้ที่<br>
+  <strong>mojokingz.dev@gmail.com</strong><br>
+  Mojokingz Studio &middot; ประเทศไทย
+</p>
+
+<hr>
+
+<h1>Privacy Policy</h1>
+<p class="sub">MOJO Guitar Tuner &middot; Last updated 31 July 2026</p>
+
+<div class="box">
+  <strong>In short:</strong> This app <strong>does not collect, transmit, or share any user data</strong>.
+  There are no accounts, no internet connection, no advertising, no in-app purchases,
+  and no analytics or tracking of any kind.
+</div>
+
+<h2>Microphone — the only permission requested</h2>
+
+<div class="mic">
+  <strong>The app requests microphone access solely to measure the pitch of your instrument</strong>
+  so it can tell you how many cents sharp or flat the string you just played is.
+</div>
+
+<p>What actually happens to the audio the microphone picks up:</p>
+<ul>
+  <li>Audio is analysed for frequency <strong>in your device's memory</strong> and discarded immediately.</li>
+  <li><strong>Nothing is ever written to a file</strong>, temporary or otherwise.</li>
+  <li><strong>Nothing ever leaves your device</strong> — the app has no networking capability at all.</li>
+  <li><strong>No speech recognition is performed.</strong> The app only measures frequency; it has no notion of what the sound is.</li>
+  <li>The microphone is <strong>active only while the tuner screen is open</strong>. Leaving that screen stops it immediately.</li>
+</ul>
+
+<p>
+  If you decline microphone access, <strong>the app still works</strong> — you simply use the chord
+  library, which needs no microphone. You can revoke the permission at any time in
+  your device's Settings &rsaquo; Apps &rsaquo; MOJO Guitar Tuner &rsaquo; Permissions.
+</p>
+
+<h2>What the app stores on your device</h2>
+<p>
+  The app stores only <strong>your own preferences</strong>: language, light/dark theme,
+  A4 reference pitch, haptic feedback on/off, left-handed mode, note naming style,
+  and any chords you mark as favourites.
+</p>
+<p>
+  All of this is kept <strong>on your device only</strong>. It is never sent anywhere,
+  and it is deleted as soon as you uninstall the app.
+</p>
+
+<h2>Internet access</h2>
+<p>
+  <strong>The app does not connect to the internet at all.</strong>
+  Both the tuner and the full library of 1,380 chords work entirely offline —
+  all chord data ships inside the app itself.
+</p>
+
+<h2>Permissions</h2>
+<p>
+  The app requests a single permission: <strong>microphone</strong> (<code>RECORD_AUDIO</code>),
+  as described above.<br>
+  No location, camera, contacts, storage, or internet access is requested.
+</p>
+
+<h2>Third-party services</h2>
+<p>
+  <strong>The app uses no third-party services.</strong>
+  No analytics, no crash reporting, no advertising networks.
+</p>
+
+<h2>Children</h2>
+<p>
+  This app is not directed specifically at children. Because it collects no data at all,
+  no information is gathered from users of any age, including children under 13.
+</p>
+
+<h2>Changes to this policy</h2>
+<p>Any future changes will be published on this page with an updated date.</p>
+
+<h2>Contact</h2>
+<p>
+  Questions about this policy:<br>
+  <strong>mojokingz.dev@gmail.com</strong><br>
+  Mojokingz Studio &middot; Thailand
+</p>
+
+</body>
+</html>
