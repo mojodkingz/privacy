@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>นโยบายความเป็นส่วนตัว — LockerMe</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 32px 20px 80px; max-width: 720px;
+    font-family: -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif;
+    line-height: 1.75; color: #1a1a1a; background: #fff;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { font-size: 1.15rem; margin-top: 36px; }
+  .sub { opacity: .65; font-size: .9rem; margin-top: 0; }
+  .box { background: #f4f6f8; border: 1px solid #e2e6ea; border-radius: 10px; padding: 16px 20px; }
+  hr { border: 0; border-top: 1px solid #e2e6ea; margin: 48px 0; }
+  code { font-size: .9em; }
+
+  /*
+   * บล็อกโหมดมืดต้องอยู่ "ท้ายสุด" ของ stylesheet เสมอ
+   * เพราะ .box ในนี้กับ .box ด้านบนมี specificity เท่ากัน (0,1,0)
+   * กฎที่อยู่ทีหลังจึงชนะ — เคยวางไว้ด้านบนแล้วกล่องสรุปกลายเป็น
+   * พื้นสว่างตัวหนังสือสว่างจนอ่านไม่ออกในโหมดมืด
+   */
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #16181c; }
+    hr { border-color: #333; }
+    .box { background: #1f2228; border-color: #3a3f47; color: #e8e8e8; }
+  }
+</style>
+</head>
+<body>
+
+<h1>นโยบายความเป็นส่วนตัว</h1>
+<p class="sub">LockerMe &middot; ปรับปรุงล่าสุด 10 กันยายน 2569</p>
+
+<div class="box">
+  <strong>สรุปสั้นที่สุด:</strong> แอปนี้ <strong>ไม่เก็บ ไม่ส่ง และไม่แชร์ข้อมูลส่วนบุคคลของผู้ใช้</strong>
+  ไม่มีระบบเก็บสถิติการใช้งาน ไม่มีโฆษณา และไม่มีเครื่องมือติดตามใด ๆ
+  ข้อมูลทั้งหมดถูกเข้ารหัสในเครื่องของผู้ใช้ และเก็บอยู่บนเซิร์ฟเวอร์ที่ผู้ใช้ติดตั้งเอง
+</div>
+
+<h2>แอปนี้ทำอะไร</h2>
+<p>
+  LockerMe เป็นหน้าจอสำหรับเข้าถึงคลังข้อมูลส่วนตัวที่ <strong>ผู้ใช้ติดตั้งและดูแลเซิร์ฟเวอร์เอง</strong>
+  ตัวแอปไม่มีเซิร์ฟเวอร์กลาง ไม่มีบัญชีที่ผู้พัฒนาดูแล และผู้พัฒนาไม่มีทางเข้าถึงข้อมูลของผู้ใช้
+</p>
+<p>
+  แอปติดต่อออกไปยัง <strong>ที่อยู่เดียวเท่านั้น</strong> คือเซิร์ฟเวอร์ของผู้ใช้เอง
+  และปฏิเสธการเชื่อมต่อไปที่อื่นทั้งหมด
+</p>
+
+<h2>การเข้ารหัส</h2>
+<p>
+  ข้อมูลทุกชิ้นถูกเข้ารหัสในเครื่องของผู้ใช้ก่อนถูกส่งออก ด้วยกุญแจที่ได้จากรหัสผ่านหลัก
+  (master password) ของผู้ใช้เอง <strong>รหัสผ่านหลักไม่เคยถูกส่งออกจากเครื่อง</strong>
+  และไม่มีสำเนาอยู่ที่ใดนอกจากในความทรงจำของผู้ใช้
+</p>
+<p>
+  เซิร์ฟเวอร์เก็บได้เพียงข้อมูลที่เข้ารหัสแล้ว ซึ่งอ่านไม่ออกหากไม่มีรหัสผ่านหลัก
+  หากผู้ใช้ลืมรหัสผ่านหลักและกุญแจกู้คืนพร้อมกัน ข้อมูลจะไม่สามารถกู้คืนได้โดยผู้ใด
+  รวมถึงผู้พัฒนา — นี่คือคุณสมบัติที่ตั้งใจออกแบบไว้ ไม่ใช่ข้อผิดพลาด
+</p>
+
+<h2>ข้อมูลที่แอปเก็บไว้ในเครื่อง</h2>
+<p>
+  แอปเก็บเพียงข้อมูลที่จำเป็นต่อการแสดงผลหน้าเว็บ ได้แก่คุกกี้เซสชันและการตั้งค่าธีม
+  ทั้งหมดอยู่ในพื้นที่ของแอปเอง ไม่ถูกสำรองขึ้นคลาวด์
+  และไม่ถูกโอนไปเครื่องใหม่เมื่อผู้ใช้เปลี่ยนโทรศัพท์
+</p>
+
+<h2>สิทธิ์ที่แอปขอ</h2>
+<p>
+  แอปขอสิทธิ์เพียงสองอย่าง คือ <code>INTERNET</code> และ <code>ACCESS_NETWORK_STATE</code>
+  เพื่อติดต่อเซิร์ฟเวอร์ของผู้ใช้และตรวจสถานะการเชื่อมต่อ
+  <strong>แอปไม่ขอสิทธิ์อ่านไฟล์ รายชื่อผู้ติดต่อ ตำแหน่ง กล้อง ไมโครโฟน หรือสิทธิ์อื่นใดทั้งสิ้น</strong>
+</p>
+
+<h2>มาตรการป้องกันบนอุปกรณ์</h2>
+<p>
+  แอปเปิด <code>FLAG_SECURE</code> ไว้ตลอด ทำให้ระบบปฏิบัติการไม่อนุญาตให้ถ่ายภาพหน้าจอ
+  และไม่แสดงเนื้อหาของแอปในหน้าสลับแอป เพื่อไม่ให้รหัสผ่านที่เปิดดูค้างอยู่ให้ผู้อื่นเห็น
+</p>
+
+<h2>บริการภายนอก</h2>
+<p>
+  <strong>ไม่มี</strong> แอปนี้ไม่ใช้บริการวิเคราะห์ข้อมูล ไม่ใช้เครือข่ายโฆษณา
+  ไม่ใช้บริการรายงานข้อขัดข้อง และไม่ส่งข้อมูลไปยังผู้พัฒนาหรือบุคคลที่สาม
+</p>
+
+<h2>เด็กและเยาวชน</h2>
+<p>
+  แอปนี้เป็นเครื่องมือสำหรับผู้ที่ดูแลเซิร์ฟเวอร์ของตนเอง ไม่ได้ออกแบบมาเพื่อเด็ก
+  และไม่มีการเก็บข้อมูลจากผู้ใช้ทุกช่วงอายุ
+</p>
+
+<h2>การเปลี่ยนแปลงนโยบายนี้</h2>
+<p>หากมีการเปลี่ยนแปลงในอนาคต จะแก้ไขที่หน้านี้พร้อมระบุวันที่ปรับปรุงใหม่</p>
+
+<hr>
+
+<h1>Privacy Policy</h1>
+<p class="sub">LockerMe &middot; Last updated 10 September 2026</p>
+
+<div class="box">
+  <strong>In short:</strong> this app <strong>collects, transmits and shares no personal data.</strong>
+  No analytics, no advertising, no tracking of any kind. Everything is encrypted on the user's own
+  device and stored on a server the user runs themselves.
+</div>
+
+<h2>What this app is</h2>
+<p>
+  LockerMe is a window onto a personal vault that <strong>the user hosts themselves</strong>.
+  There is no central service, no developer-operated account, and no way for the developer to
+  reach a user's data. The app connects to exactly one address — the user's own server — and
+  refuses to navigate anywhere else.
+</p>
+
+<h2>Encryption</h2>
+<p>
+  Everything is encrypted on the device before it leaves, under a key derived from the user's own
+  master password. <strong>The master password never leaves the device</strong> and exists nowhere
+  but in the user's memory. The server holds ciphertext it cannot read. If the master password and
+  the recovery key are both lost, nobody can recover the data — including the developer. That is a
+  deliberate property of the design, not a limitation.
+</p>
+
+<h2>Data stored on the device</h2>
+<p>
+  Only what the page needs to work: a session cookie and interface preferences, kept in the app's
+  own storage. Neither is included in cloud backup nor transferred to a new phone.
+</p>
+
+<h2>Permissions</h2>
+<p>
+  Two: <code>INTERNET</code> and <code>ACCESS_NETWORK_STATE</code>. The app requests no access to
+  files, contacts, location, camera, microphone or anything else.
+</p>
+
+<h2>On-device protection</h2>
+<p>
+  <code>FLAG_SECURE</code> is set for the lifetime of the app, so the operating system blocks
+  screenshots and keeps the app's contents out of the recent-apps preview — a revealed password
+  does not linger there for the next person to pick up the phone.
+</p>
+
+<h2>Third-party services</h2>
+<p><strong>None.</strong> No analytics, no ad networks, no crash reporting, no data sent to the developer or anyone else.</p>
+
+<h2>Children</h2>
+<p>This app is a tool for people running their own server. It is not directed at children, and it collects no data from users of any age.</p>
+
+<h2>Changes</h2>
+<p>Any future change will be published on this page with a new revision date.</p>
+
+</body>
+</html>
