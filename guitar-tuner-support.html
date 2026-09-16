@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOJO Guitar Tuner — ความช่วยเหลือ / Support</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --accent: #0a7ea4;
+    --card: #f7f7f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141416;
+      --fg: #f2f2f5;
+      --muted: #9b9ba1;
+      --line: #2c2c30;
+      --accent: #36f1d2;
+      --card: #1d1d20;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 20px 64px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "IBM Plex Sans Thai", "Noto Sans Thai", sans-serif;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 { font-size: 28px; line-height: 1.4; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 40px 0 12px; padding-top: 24px; border-top: 1px solid var(--line); }
+  h3 { font-size: 17px; margin: 24px 0 6px; }
+  p, li { margin: 8px 0; }
+  .lead { color: var(--muted); margin-bottom: 8px; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .contact { font-size: 17px; font-weight: 600; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  [lang="en"] h2:first-of-type { border-top: none; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>MOJO Guitar Tuner</h1>
+  <p class="lead">ความช่วยเหลือและการติดต่อ · Support &amp; Contact</p>
+
+  <div class="card">
+    <p class="contact">📧 <a href="mailto:mojokingz.dev@gmail.com">mojokingz.dev@gmail.com</a></p>
+    <p>ตอบกลับภายใน 1–3 วันทำการ · We reply within 1–3 business days</p>
+  </div>
+
+  <h2>วิธีใช้งาน</h2>
+
+  <h3>เริ่มต้น</h3>
+  <p>เปิดแอปแล้วกด <strong>อนุญาต</strong> เมื่อระบบขอสิทธิ์ไมโครโฟน จากนั้นดีดสายกีตาร์หรืออูคูเลเล่ใกล้ ๆ เครื่อง
+  เข็มจะบอกว่าเป็นสายไหน และเสียงสูงหรือต่ำกว่าที่ควรกี่เซ็นต์</p>
+
+  <h3>ค่าเซ็นต์ (cents) คืออะไร</h3>
+  <p>เซ็นต์คือหน่วยวัดความเพี้ยนของเสียง หนึ่งครึ่งเสียงเท่ากับ 100 เซ็นต์
+  ถ้าขึ้น <strong>+23 ¢</strong> แปลว่าเสียงสูงกว่าที่ควรอยู่ 23 เซ็นต์ ให้คลายลูกบิดลงเล็กน้อย
+  ถ้าเป็นค่าลบคือต่ำไป ให้ขันขึ้น เมื่ออยู่ในช่วง ±5 เซ็นต์ถือว่าตรงคีย์แล้ว</p>
+
+  <h3>โหมดอัตโนมัติกับการล็อกสาย</h3>
+  <p>ปกติแอปจะเดาเองว่าคุณกำลังดีดสายไหน ถ้าอยากจูนทีละสายให้แน่นอน
+  กดปุ่มชื่อสายเพื่อล็อก แล้วกดซ้ำเพื่อปลดล็อก</p>
+
+  <h2>แก้ปัญหาที่พบบ่อย</h2>
+
+  <h3>เข็มไม่ขยับเลย</h3>
+  <ul>
+    <li>ตรวจว่าอนุญาตไมโครโฟนแล้ว — ตั้งค่า → MOJO Guitar Tuner → ไมโครโฟน</li>
+    <li>ถ้าเสียบหูฟังหรือต่อลำโพงบลูทูธอยู่ ลองถอดออกก่อน</li>
+    <li>ปิดแอปอื่นที่ใช้ไมค์อยู่ เช่น แอปโทรศัพท์หรือแอปอัดเสียง</li>
+    <li>ดีดให้ดังขึ้นอีกนิด และวางเครื่องใกล้กีตาร์มากขึ้น</li>
+  </ul>
+
+  <h3>แอปบอกผิดสาย</h3>
+  <p>ลองกดล็อกสายที่ต้องการแทนการใช้โหมดอัตโนมัติ
+  สายที่ห่างกันพอดีหนึ่งหรือสองอ็อกเทฟอาจถูกตีความสลับกันได้ในบางจังหวะ</p>
+
+  <h3>อยากใช้มาตรฐานเสียงอื่น</h3>
+  <p>แอปรองรับการปรับความถี่อ้างอิง A4 ตั้งแต่ 415 ถึง 466 Hz สำหรับวงที่ใช้มาตรฐานต่างจาก 440 Hz</p>
+
+  <h2>ความเป็นส่วนตัว</h2>
+  <p>แอปใช้ไมโครโฟนเพื่อวัดระดับเสียงเท่านั้น เสียงถูกคำนวณในเครื่องของคุณแล้วทิ้งทันที
+  <strong>ไม่มีการบันทึกเป็นไฟล์ และไม่มีการส่งออกจากเครื่อง</strong>
+  แอปทำงานออฟไลน์ทั้งหมด ไม่มีโฆษณา และไม่เก็บข้อมูลผู้ใช้</p>
+  <p>อ่านฉบับเต็ม: <a href="https://mojodkingz.github.io/privacy/guitar-tuner.html">นโยบายความเป็นส่วนตัว</a></p>
+
+  <h2 lang="en">Support (English)</h2>
+
+  <h3 lang="en">Getting started</h3>
+  <p lang="en">Open the app and tap <strong>Allow</strong> when asked for microphone access, then play a guitar or
+  ukulele string near the device. The needle shows which string you played and how many cents sharp or flat it is.</p>
+
+  <h3 lang="en">What are cents?</h3>
+  <p lang="en">A cent is a unit of pitch: one semitone equals 100 cents. <strong>+23 ¢</strong> means the note is
+  23 cents too high, so loosen the tuning peg slightly. A negative value means it is too low. Within ±5 cents counts as in tune.</p>
+
+  <h3 lang="en">The needle does not move</h3>
+  <ul lang="en">
+    <li>Check microphone permission: Settings → MOJO Guitar Tuner → Microphone</li>
+    <li>Unplug headphones or disconnect Bluetooth speakers and try again</li>
+    <li>Close other apps that may be holding the microphone</li>
+    <li>Play a little louder and move the device closer to the instrument</li>
+  </ul>
+
+  <h3 lang="en">Privacy</h3>
+  <p lang="en">The microphone is used only to measure pitch. Audio is analysed on your device and discarded
+  immediately — never recorded to a file and never sent anywhere. The app works fully offline, shows no ads,
+  and collects no user data. Full text:
+  <a href="https://mojodkingz.github.io/privacy/guitar-tuner.html">Privacy Policy</a>.</p>
+
+  <footer>
+    <p>MOJO Guitar Tuner · Mojokingz Studio<br>
+    ติดต่อ / Contact: <a href="mailto:mojokingz.dev@gmail.com">mojokingz.dev@gmail.com</a></p>
+  </footer>
+
+</main>
+</body>
+</html>
