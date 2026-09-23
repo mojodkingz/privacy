@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>นโยบายความเป็นส่วนตัว — MOJO NetCheck สำหรับ iPhone</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0 auto; padding: 32px 20px 80px; max-width: 720px;
+    font-family: -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif;
+    line-height: 1.75; color: #1a1a1a; background: #fff;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { font-size: 1.15rem; margin-top: 36px; }
+  .sub { opacity: .65; font-size: .9rem; margin-top: 0; }
+  .box { background: #f4f6f8; border: 1px solid #e2e6ea; border-radius: 10px; padding: 16px 20px; }
+  hr { border: 0; border-top: 1px solid #e2e6ea; margin: 48px 0; }
+  code { font-size: .9em; }
+
+  /*
+   * บล็อกโหมดมืดต้องอยู่ "ท้ายสุด" ของ stylesheet เสมอ
+   * เพราะ .box ในนี้กับ .box ด้านบนมี specificity เท่ากัน (0,1,0)
+   * กฎที่อยู่ทีหลังจึงชนะ — เคยวางไว้ด้านบนแล้วกล่องสรุปอ่านไม่ออกในโหมดมืด
+   */
+  @media (prefers-color-scheme: dark) {
+    body { color: #e8e8e8; background: #16181c; }
+    hr { border-color: #333; }
+    .box { background: #1f2228; border-color: #3a3f47; color: #e8e8e8; }
+  }
+</style>
+</head>
+<body>
+
+<h1>นโยบายความเป็นส่วนตัว</h1>
+<p class="sub">MOJO NetCheck สำหรับ iPhone และ iPad &middot; ปรับปรุงล่าสุด 23 กันยายน 2569</p>
+
+<div class="box">
+  <strong>สรุปสั้นที่สุด:</strong> แอปนี้ <strong>ไม่เก็บ ไม่ส่ง และไม่แชร์ข้อมูลส่วนบุคคลของผู้ใช้</strong>
+  ไม่มีบัญชีผู้ใช้ ไม่มีระบบเก็บสถิติการใช้งาน ไม่มีโฆษณา และไม่มีเครื่องมือติดตามใด ๆ
+</div>
+
+<h2>ข้อมูลที่แอปประมวลผล</h2>
+<p>
+  ผลการสแกนทั้งหมด (IP, ชื่อเครื่อง, พอร์ตที่เปิด, บริการที่ประกาศผ่าน Bonjour)
+  ถูกเก็บไว้ในหน่วยความจำของเครื่องเท่านั้น และหายไปเมื่อปิดแอป
+</p>
+
+<h2>ข้อมูลที่แอปบันทึกลงเครื่อง</h2>
+<p>
+  มีสองอย่างเท่านั้น และทั้งคู่อยู่ในเครื่องของผู้ใช้ ไม่ถูกส่งออกไปไหน
+</p>
+<ul>
+  <li>เพดานปริมาณข้อมูลของการทดสอบความเร็ว ที่ผู้ใช้ตั้งเองในหน้าตั้งค่า</li>
+  <li>รายการอุปกรณ์ที่ผู้ใช้เลือก &ldquo;เฝ้าดู&rdquo; (เก็บเฉพาะ IP กับชื่อที่แสดง)
+      ลบได้โดยกดเลิกเฝ้าดู หรือลบแอปทิ้ง</li>
+</ul>
+
+<h2>เรื่องสิทธิ์ตำแหน่ง</h2>
+<p>
+  แอปขอสิทธิ์ตำแหน่งเพื่ออ่าน<strong>ชื่อเครือข่าย Wi-Fi ที่กำลังต่ออยู่</strong>เท่านั้น
+  เพราะ Apple กำหนดให้แอปต้องมีสิทธิ์นี้ก่อนจึงจะอ่าน SSID ได้
+</p>
+<p>
+  <strong>แอปไม่ได้เรียกอ่านพิกัดของผู้ใช้</strong> ไม่เก็บ ไม่บันทึก และไม่ส่งตำแหน่งออกนอกเครื่อง
+  ถ้าไม่ให้สิทธิ์นี้ ฟีเจอร์อื่นทั้งหมดยังใช้ได้ตามปกติ เพียงแต่จะไม่เห็นชื่อ Wi-Fi
+</p>
+
+<h2>เรื่องสิทธิ์เครือข่ายในบ้าน</h2>
+<p>
+  iOS จะถามสิทธิ์ &ldquo;เครือข่ายท้องถิ่น&rdquo; ครั้งแรกที่แอปค้นหาอุปกรณ์ในวง
+  สิทธิ์นี้จำเป็นต่อการทำงานหลักของแอป และใช้เฉพาะภายในเครือข่ายของผู้ใช้เอง
+</p>
+
+<h2>การเชื่อมต่อออกภายนอก</h2>
+<p>
+  แอปติดต่อออกอินเทอร์เน็ตเพียง 2 กรณี
+</p>
+<p>
+  <strong>1. ขอ IP สาธารณะ (แท็บ &ldquo;พอร์ต&rdquo;)</strong> &mdash; ถามจากบริการตรวจ IP สาธารณะ
+  (<code>api.ipify.org</code>, <code>checkip.amazonaws.com</code> หรือ <code>icanhazip.com</code>)
+  ซึ่งจำเป็นต่อการทดสอบ port forwarding คำขอนี้ไม่มีข้อมูลระบุตัวตนแนบไปด้วย
+</p>
+<p>
+  <strong>2. วัดความเร็วอินเทอร์เน็ต (แท็บ &ldquo;ความเร็ว&rdquo;)</strong> &mdash; รับส่งข้อมูลกับ
+  เซิร์ฟเวอร์ของ Cloudflare (<code>speed.cloudflare.com</code>) เฉพาะตอนที่ผู้ใช้กดปุ่มเริ่มเอง
+  ข้อมูลที่ส่งขึ้นเป็นข้อมูลสุ่มที่แอปสร้างขึ้นมาเพื่อจับเวลาโดยเฉพาะ ไม่ใช่ข้อมูลใด ๆ ของผู้ใช้
+  และปลายทางทิ้งข้อมูลนั้นทันที ผู้ใช้กำหนดเพดานปริมาณข้อมูลต่อการทดสอบได้เองในหน้าตั้งค่า
+</p>
+<p>
+  การเชื่อมต่ออื่นทั้งหมดเป็นการต่อภายในเครือข่ายของผู้ใช้เอง
+  หรือไปยังปลายทางที่ผู้ใช้พิมพ์ระบุเอง
+</p>
+
+<h2>การใช้งานอย่างเหมาะสม</h2>
+<p>
+  เครื่องมือสแกนเครือข่ายและตรวจพอร์ตในแอปนี้มีไว้ใช้กับเครือข่ายที่ผู้ใช้เป็นเจ้าของ
+  หรือได้รับอนุญาตให้ตรวจสอบเท่านั้น การนำไปสแกนเครือข่ายหรือเครื่องของผู้อื่นโดยไม่ได้รับอนุญาต
+  อาจผิดกฎหมาย และอยู่นอกเหนือความรับผิดชอบของผู้พัฒนา
+</p>
+
+<h2>เด็กและเยาวชน</h2>
+<p>
+  แอปนี้เป็นเครื่องมือสำหรับผู้ดูแลเครือข่าย ไม่ได้ออกแบบมาเพื่อเด็ก
+  และไม่มีการเก็บข้อมูลจากผู้ใช้ทุกช่วงอายุ
+</p>
+
+<h2>การเปลี่ยนแปลงนโยบายนี้</h2>
+<p>หากมีการเปลี่ยนแปลงในอนาคต จะแก้ไขที่หน้านี้พร้อมระบุวันที่ปรับปรุงใหม่</p>
+
+<h2>ติดต่อ</h2>
+<p>
+  <strong>mojokingz.dev@gmail.com</strong><br>
+  Mojokingz Studio &middot; ประเทศไทย
+</p>
+
+<hr>
+
+<h1>Privacy Policy</h1>
+<p class="sub">MOJO NetCheck for iPhone and iPad &middot; Last updated 23 September 2026</p>
+
+<div class="box">
+  <strong>In short:</strong> This app <strong>does not collect, transmit, or share any personal data</strong>.
+  No accounts, no analytics, no advertising, and no tracking of any kind.
+</div>
+
+<h2>What the app processes</h2>
+<p>
+  All scan results (IP addresses, host names, open ports, services announced over Bonjour)
+  are kept in device memory only and are discarded when the app closes.
+</p>
+
+<h2>What the app saves on your device</h2>
+<p>Two things only, and neither ever leaves your device:</p>
+<ul>
+  <li>The data allowance you choose for the speed test in Settings.</li>
+  <li>The list of devices you chose to watch (their IP address and display name only).
+      Remove them by tapping Stop watching, or by deleting the app.</li>
+</ul>
+
+<h2>Location permission</h2>
+<p>
+  The app asks for location permission solely to read the <strong>name of the Wi-Fi network
+  you are currently joined to</strong>, because Apple requires that permission before an app
+  can read the SSID.
+</p>
+<p>
+  <strong>The app never reads your coordinates.</strong> Your location is not collected,
+  stored, or transmitted anywhere. If you decline, everything else keeps working &mdash;
+  you simply will not see the Wi-Fi name.
+</p>
+
+<h2>Local network permission</h2>
+<p>
+  iOS asks for &ldquo;Local Network&rdquo; access the first time the app looks for devices
+  around you. That permission is essential to what the app does, and it is used only inside
+  your own network.
+</p>
+
+<h2>Outbound connections</h2>
+<p>The app reaches the internet in two cases only.</p>
+<p>
+  <strong>1. Public IP lookup (&ldquo;Ports&rdquo; tab)</strong> &mdash; it asks a public IP lookup service
+  (<code>api.ipify.org</code>, <code>checkip.amazonaws.com</code>, or <code>icanhazip.com</code>)
+  for your public IP, which is required to test port forwarding.
+  No identifying information is attached to that request.
+</p>
+<p>
+  <strong>2. Speed measurement (&ldquo;Speed&rdquo; tab)</strong> &mdash; it exchanges data with Cloudflare
+  servers (<code>speed.cloudflare.com</code>), and only when you press the start button yourself.
+  What gets uploaded is random filler the app generates purely for timing &mdash; never any of your data
+  &mdash; and the far end discards it immediately. You set the data cap per test in Settings.
+</p>
+<p>
+  All other connections are to your own local network, or to a destination you typed in yourself.
+</p>
+
+<h2>Acceptable use</h2>
+<p>
+  The network scanning and port checking tools in this app are intended for networks you own
+  or are authorised to test. Scanning networks or devices without permission may be illegal
+  and is outside the developer's responsibility.
+</p>
+
+<h2>Children</h2>
+<p>
+  This app is a network administration tool and is not directed at children.
+  No data is collected from users of any age.
+</p>
+
+<h2>Changes to this policy</h2>
+<p>Any future changes will be published on this page with an updated date.</p>
+
+<h2>Contact</h2>
+<p>
+  <strong>mojokingz.dev@gmail.com</strong><br>
+  Mojokingz Studio &middot; Thailand
+</p>
+
+</body>
+</html>
