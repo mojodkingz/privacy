@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOJO NetCheck — ความช่วยเหลือ / Support</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --accent: #0a8ccc;
+    --card: #f7f7f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141416;
+      --fg: #f2f2f5;
+      --muted: #9b9ba1;
+      --line: #2c2c30;
+      --accent: #29b8f5;
+      --card: #1d1d20;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 20px 64px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "IBM Plex Sans Thai", "Noto Sans Thai", sans-serif;
+  }
+  main { max-width: 680px; margin: 0 auto; }
+  h1 { font-size: 28px; line-height: 1.4; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 40px 0 12px; padding-top: 24px; border-top: 1px solid var(--line); }
+  h3 { font-size: 17px; margin: 24px 0 6px; }
+  p, li { margin: 8px 0; }
+  .lead { color: var(--muted); margin-bottom: 8px; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .contact { font-size: 17px; font-weight: 600; }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>MOJO NetCheck</h1>
+  <p class="lead">ความช่วยเหลือและการติดต่อ · Support &amp; Contact</p>
+
+  <div class="card">
+    <p class="contact">📧 <a href="mailto:mojokingz.dev@gmail.com">mojokingz.dev@gmail.com</a></p>
+    <p>ตอบกลับภายใน 1–3 วันทำการ · We reply within 1–3 business days</p>
+  </div>
+
+  <h2>สิทธิ์ที่แอปขอ และทำไม</h2>
+
+  <h3>เครือข่ายท้องถิ่น (Local Network)</h3>
+  <p>iOS จะถามครั้งแรกที่แอปค้นหาอุปกรณ์ในบ้าน ต้องกด <strong>อนุญาต</strong>
+  ไม่งั้นแท็บอุปกรณ์กับ Bonjour จะหาอะไรไม่เจอเลย สิทธิ์นี้ใช้เฉพาะภายในเครือข่ายของคุณเอง</p>
+
+  <h3>ตำแหน่ง</h3>
+  <p>ใช้อ่าน<strong>ชื่อ Wi-Fi ที่กำลังต่ออยู่</strong>เท่านั้น เพราะ Apple บังคับให้ต้องมีสิทธิ์นี้ก่อนจึงจะอ่านชื่อ Wi-Fi ได้
+  แอปไม่ได้อ่านพิกัดของคุณ ถ้าไม่อนุญาต ทุกอย่างยังใช้ได้ตามปกติ แค่จะไม่เห็นชื่อ Wi-Fi</p>
+
+  <h2>แก้ปัญหาที่พบบ่อย</h2>
+
+  <h3>แท็บอุปกรณ์ไม่เจออะไรเลย</h3>
+  <ul>
+    <li>ตรวจว่าอนุญาตเครือข่ายท้องถิ่นแล้ว — ตั้งค่า → MOJO NetCheck → เครือข่ายท้องถิ่น</li>
+    <li>ต้องต่อ Wi-Fi อยู่ ถ้าใช้เน็ตมือถืออย่างเดียวจะไม่มีวงให้สแกน</li>
+    <li>Wi-Fi สาธารณะหรือ Wi-Fi ของโรงแรมมักกั้นเครื่องไม่ให้มองเห็นกัน นี่เป็นการตั้งค่าของเครือข่าย ไม่ใช่แอปเสีย</li>
+  </ul>
+
+  <h3>หน้าคุณภาพขึ้นว่าแพ็กเก็ตหาย 100%</h3>
+  <p>เราเตอร์และเซิร์ฟเวอร์หลายตัวตั้งค่าไม่ให้ตอบ ping ไว้ตั้งแต่แรก แปลว่า<strong>ปลายทางนั้นเงียบ ไม่ได้แปลว่าเน็ตเสีย</strong>
+  แตะที่ "วัดไปที่" แล้วลองเลือกปลายทางอื่น</p>
+
+  <h3>หน้าพอร์ตขึ้นว่า "ทดสอบจากในวงตัวเอง"</h3>
+  <p>การทดสอบที่เชื่อถือได้ต้องยิงออกทางเน็ตมือถือ เพื่อให้เข้าหาเราเตอร์ด้วยเส้นทางเดียวกับคนนอก
+  ถ้าเครื่องไม่มีซิมหรือปิดข้อมูลมือถืออยู่ แอปจะยิงผ่าน Wi-Fi แทน ซึ่งเราเตอร์บางรุ่นตอบเองหรือดรอปทิ้ง ผลจึงเป็นแค่เบาะแส</p>
+
+  <h3>ทดสอบความเร็วแล้วกินดาต้าเยอะ</h3>
+  <p>ตั้งเพดานดาต้าต่อการทดสอบได้ในหน้าตั้งค่า แยกค่าระหว่าง Wi-Fi กับเน็ตมือถือ
+  ค่าเริ่มต้นคือ 1 GB บน Wi-Fi และ 100 MB บนเน็ตมือถือ</p>
+
+  <h3>ทำไมไม่เห็น Wi-Fi รอบข้าง ช่องสัญญาณ หรือความแรงสัญญาณ</h3>
+  <p>iPhone ไม่อนุญาตให้แอปใดก็ตามเข้าถึงข้อมูลเหล่านี้ เป็นข้อกำหนดของ Apple ไม่ใช่ฟีเจอร์ที่ขาดไป</p>
+
+  <h2>ความเป็นส่วนตัว</h2>
+  <p>แอป<strong>ไม่เก็บและไม่ส่งข้อมูลของคุณ</strong> ผลการสแกนอยู่ในเครื่องเท่านั้นและหายเมื่อปิดแอป
+  ไม่มีบัญชีผู้ใช้ ไม่มีโฆษณา ไม่มีระบบเก็บสถิติ</p>
+  <p>อ่านฉบับเต็ม: <a href="https://mojodkingz.github.io/privacy/netcheck.html">นโยบายความเป็นส่วนตัว</a></p>
+
+  <h2 lang="en">Support (English)</h2>
+
+  <h3 lang="en">Permissions</h3>
+  <p lang="en"><strong>Local Network</strong> — iOS asks the first time the app looks for devices around you. Please tap
+  Allow, otherwise the Devices and Bonjour tabs cannot find anything. It is used only inside your own network.</p>
+  <p lang="en"><strong>Location</strong> — used only to read the name of the Wi-Fi network you are joined to, because Apple
+  requires it for that. The app never reads your coordinates. Declining it only hides the Wi-Fi name.</p>
+
+  <h3 lang="en">No devices found</h3>
+  <ul lang="en">
+    <li>Check Settings → MOJO NetCheck → Local Network is on</li>
+    <li>You need to be on Wi-Fi — mobile data alone has no local network to scan</li>
+    <li>Public and hotel Wi-Fi often isolate devices from each other; that is the network's setting, not a fault</li>
+  </ul>
+
+  <h3 lang="en">Quality shows 100% packet loss</h3>
+  <p lang="en">Many routers and servers are set to ignore ping on purpose. It means that target is silent, not that
+  your connection is broken. Tap "Measuring against" and choose another target.</p>
+
+  <h3 lang="en">Ports says "Testing from inside your network"</h3>
+  <p lang="en">A trustworthy test has to go out over mobile data so it reaches your router the way a stranger would.
+  Without a SIM or with mobile data off, the app falls back to Wi-Fi, where some routers answer themselves or drop the
+  probe — treat that result as a hint.</p>
+
+  <h3 lang="en">Privacy</h3>
+  <p lang="en">The app collects and transmits none of your data. Scan results stay on your device and are discarded
+  when you close the app. No accounts, no ads, no analytics. Full text:
+  <a href="https://mojodkingz.github.io/privacy/netcheck.html">Privacy Policy</a>.</p>
+
+  <footer>
+    <p>MOJO NetCheck · Mojokingz Studio<br>
+    ติดต่อ / Contact: <a href="mailto:mojokingz.dev@gmail.com">mojokingz.dev@gmail.com</a></p>
+  </footer>
+
+</main>
+</body>
+</html>
